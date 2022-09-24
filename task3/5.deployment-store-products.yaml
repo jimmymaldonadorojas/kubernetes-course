@@ -30,7 +30,7 @@ spec:
         #image: calebespinoza/store-products:1.0
         # Excercise 13 - rollback
         #image: calebespinoza/store-products:2.0
-        # Excercise 13 - rollback
+        # Excercise 14 - rollback
         image: calebespinoza/store-products:3.0
         ports:
         - containerPort: 80
