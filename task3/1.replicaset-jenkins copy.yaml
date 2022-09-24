@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: jenkins-rs
+  labels:
+    app: jenkins
+    env: dev
+spec:
+  # Excercise 1
+  #replicas: 1
+  # Excercise 2
+  #replicas: 5
+  # Excercise 3
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata: 
+      name: jenkins
+      labels:
+        app: jenkins
+    spec: 
+      containers: 
+      - name: jenkins
+        image: jenkins/jenkins:jdk11
+        ports:
+        - containerPort: 8080

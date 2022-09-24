@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-products-d
+  labels:
+    app: store-products
+    env: dev
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: store-products
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata: 
+      name: store-products
+      labels:
+        app: store-products
+    spec: 
+      containers: 
+      - name: store-products
+        # Excercise 5
+        #image: calebespinoza/store-products:1.0
+        # Excercise 6
+        #image: calebespinoza/store-products:2.0
+        # Excercise 7
+        #image: calebespinoza/store-products:3.0
+        # Excercise 11 - rollback
+        #image: calebespinoza/store-products:1.0
+        # Excercise 13 - rollback
+        #image: calebespinoza/store-products:2.0
+        # Excercise 13 - rollback
+        image: calebespinoza/store-products:3.0
+        ports:
+        - containerPort: 80
